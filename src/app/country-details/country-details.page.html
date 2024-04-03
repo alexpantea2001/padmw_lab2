@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ country.name.common }} Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Official Name</ion-card-subtitle>
+      <ion-card-title>{{ country.name.official }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Capital:</strong> {{ country.capital }}</p>
+      <p><strong>Region:</strong> {{ country.region }}</p>
+      <ion-img [src]="country.flags.png" alt="{{ country.flags.alt }}"></ion-img>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item-divider>
+    <ion-label>Additional Details</ion-label>
+  </ion-item-divider>
+
+  <ion-card>
+    <ion-card-content>
+      <pre>{{ country | json }}</pre>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
