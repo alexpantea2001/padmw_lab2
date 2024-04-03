@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>{{ country.name.common }} Details</ion-title>
+    <ion-title *ngIf="country">{{ country.name.common }} Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,13 +8,13 @@
   <ion-card>
     <ion-card-header>
       <ion-card-subtitle>Official Name</ion-card-subtitle>
-      <ion-card-title>{{ country.name.official }}</ion-card-title>
+      <ion-card-title *ngIf="country">{{ country.name.official }}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <p><strong>Capital:</strong> {{ country.capital }}</p>
-      <p><strong>Region:</strong> {{ country.region }}</p>
-      <ion-img [src]="country.flags.png" alt="{{ country.flags.alt }}"></ion-img>
+      <p *ngIf="country"><strong>Capital:</strong> {{ country.capital }}</p>
+      <p *ngIf="country"><strong>Region:</strong> {{ country.region }}</p>
+      <ion-img *ngIf="country" [src]="country.flags.png" alt="{{ country.flags.alt }}"></ion-img>
     </ion-card-content>
   </ion-card>
 

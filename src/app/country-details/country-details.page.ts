@@ -11,8 +11,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./country-details.page.scss'],
 })
 export class CountryDetailsPage implements OnInit {
-  country?: Country;
-  code?: string;
+  country: Country | undefined;
+  code: string | undefined;
   errorMessage: string = '';
 
   constructor(
